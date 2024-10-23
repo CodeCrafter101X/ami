@@ -1,0 +1,239 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s; /* إضافة تأثيرات انتقالية */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #6200ea, #03dac5);
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+    transition: transform 0.3s; /* تأثير التحول للصورة */
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* تكبير الصورة عند المرور */
+}
+
+h1 {
+    font-size: 24px;
+    transition: color 0.3s; /* تأثير الانتقال على النص */
+}
+
+.btn-add {
+    background: #6200ea;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 24px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* إضافة تأثير التحول */
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-add:hover {
+    background: #3700b3;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* تأثير الظل عند المرور */
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.memory-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    margin: 15px;
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.2s, box-shadow 0.2s; /* إضافة تأثير التحول */
+    position: relative;
+}
+
+.memory-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* تأثير الظل عند المرور */
+}
+
+.memory-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.memory-card img:hover {
+    transform: scale(1.1);
+}
+
+.memory-card h3,
+.memory-card p {
+    padding: 10px;
+}
+
+.memory-card h3 {
+    font-size: 20px;
+    color: #6200ea;
+}
+
+.memory-card p {
+    font-size: 16px;
+    color: #666;
+}
+
+.memory-card .btn-download {
+    background: #03dac5;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 24px;
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* إضافة تأثير التحول */
+}
+
+.memory-card .btn-download:hover {
+    background: #02b59c;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* تأثير الظل عند المرور */
+}
+
+.btn-delete {
+    background: #ff3d00;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 24px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* إضافة تأثير التحول */
+    margin: 10px;
+}
+
+.btn-delete:hover {
+    background: #c62828;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* تأثير الظل عند المرور */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: opacity 0.3s; /* تأثير الانتقال عند فتح/إغلاق المودال */
+}
+
+.modal h2 {
+    color: white;
+    text-align: center;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#memoryForm {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.form-group i {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    color: #6200ea;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 12px 10px 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* إضافة تأثيرات التحول */
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #6200ea;
+    box-shadow: 0 0 5px rgba(98, 0, 234, 0.5); /* تأثير الظل عند التركيز */
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+.btn-submit {
+    background: #03dac5;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 24px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* إضافة تأثير التحول */
+}
+
+.btn-submit:hover {
+    background: #02b59c;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* تأثير الظل عند المرور */
+}
+
+#passwordInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* إضافة تأثيرات التحول */
+}
+
+#passwordInput:focus {
+    border-color: #6200ea;
+    box-shadow: 0 0 5px rgba(98, 0, 234, 0.5); /* تأثير الظل عند التركيز */
+}
